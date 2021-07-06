@@ -5,7 +5,7 @@ const fastify = require('fastify')({ logger: true })
 fastify.get('/', async (request, reply) => {
   return "HELLO RLD"
 })
-const avengers= ["Captain America", "Thor"]
+const avengers= ["Captain America", "Thor","Loki"]
 fastify.get('/heroes', () => {
   return avengers
 })
