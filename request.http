@@ -6,6 +6,23 @@ GET http://localhost:4000/heroes
 
 ###
 
+
+GET http://localhost:4000/heroes/69
+
+###
+
+
+GET http://localhost:4000/heroes/bio/60e459571f6ee8329c627e71
+
+###
+
+DELETE  http://localhost:4000/heroes/bio/60e467d6fb4e3730c8b30074
+
+###
+GET http://localhost:4000/heroes/60e451e76fbef212f8937d59
+
+###
+
 POST http://localhost:4000/heroes
 Content-Type: application/json
 
