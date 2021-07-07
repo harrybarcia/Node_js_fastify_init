@@ -90,6 +90,16 @@ const result= await collection.findOneAndDelete({
 })
 return result
   });
+
+  // PUT Patch
+  fastify.patch("/heroes/:id", async (request, reply) => {
+    const collection=fastify.mongo.db.collection("heroes")
+    const {id} =request.params
+    const result=await collection.findOneAndUpdate({_id:new ObjectId(id)},{$set:request.body},{returnDocument:'after'})
+return result
+    })
+
+
 /* console.table(avengers)
  */ // Run the server!
 const start = async () => {

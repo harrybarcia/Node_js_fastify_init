@@ -53,3 +53,11 @@ Content-Type: application/json
         "alignment": "good"
       }
 }
+
+###
+PATCH http://localhost:4000/heroes/60e46d77e07e520870b6d446
+Content-Type: application/json
+
+{
+  "biography.full-name":"Bruce Wayne3"
+  }
