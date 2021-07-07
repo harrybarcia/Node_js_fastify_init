@@ -61,3 +61,39 @@ Content-Type: application/json
 {
   "biography.full-name":"Bruce Wayne3"
   }
+
+
+
+###
+GET http://localhost:4000/users
+
+###
+
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+"email": "toto@gmail.com",
+"password": "motdepasse",
+"role":"user"}
+
+###
+
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+"email": "titi@gmail.com",
+"password": "motdepasse2",
+"role":"admin"}
+
+###
+GET http://localhost:4000/users/60e5af60d2e6e81fd4ae1b2a
+
+###
+PATCH http://localhost:4000/users/60e5b641e01f560b00fa3db7
+Content-Type: application/json
+
+{
+  "email":"tata@gmail.com"
+  }

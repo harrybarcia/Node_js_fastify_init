@@ -99,6 +99,82 @@ return result
 return result
     })
 
+// Exercice
+
+// Je souhaite:
+// Une route qui me permette de créer un nouvel utilisateur (user) dans une collection users
+// 		- email
+// 		- password
+// 		- role (user/admin)
+// Une route qui me permette de récupérer tout les utilisateurs
+// Une route qui me permette de récupérer un utilisateur par son id
+// Une route qui me permette de mettre à jour un utilisateur par son id
+// Une route qui me permette de supprimer un utilisateur par son id
+
+// Une route qui me permette de créer un nouvel utilisateur (user) dans une collection users
+
+/* fastify.get("/users", async (request, reply) => {
+  return "HELLO RLD";
+});
+ */
+
+fastify.post("/users", async (request, reply) => {
+  console.log(request.body);
+  const collection = fastify.mongo.db.collection("users");
+  console.log(collection);
+  const result = await collection.insertOne(request.body);
+  return result.ops[0];
+});
+
+// Une route qui me permette de récupérer tout les utilisateurs
+fastify.get('/users', async () => {
+  
+  const collection=fastify.mongo.db.collection("users")
+  
+  const result=await collection.find({}).toArray()
+  return result
+})
+
+
+// Une route qui me permette de récupérer un utilisateur par son id
+
+//obtiens le héros ayant un id 69
+fastify.get('/users/:id', async (request,reply) => {
+
+//   const heroesId=request.params.heroesId
+ 
+const collection=fastify.mongo.db.collection("users")
+const {id} =request.params
+const result=await collection.findOne({
+  _id:new ObjectId(id)//transforme ma chaine de caractère. C'est une "classe", instance d'un objet.
+})
+return result.email
+})
+
+// Une route qui me permette de mettre à jour un utilisateur par son id
+
+
+  // PUT Patch
+  fastify.patch("/users/:id", async (request, reply) => {
+    const collection=fastify.mongo.db.collection("users")
+    const {id} =request.params
+    const result=await collection.findOneAndUpdate({_id:new ObjectId(id)},{$set:request.body},{returnDocument:'after'})
+return result
+    })
+
+    // Une route qui me permette de supprimer un utilisateur par son id
+
+    fastify.delete("/users/:Id", async (request, reply) => {
+      const collection = fastify.mongo.db.collection("users");
+      const { Id } = request.params;
+    const result= await collection.findOneAndDelete({
+      _id:new ObjectId(Id)
+    })
+    return result
+      });
+    
+
+// FIN EXERCICE//
 
 /* console.table(avengers)
  */ // Run the server!
