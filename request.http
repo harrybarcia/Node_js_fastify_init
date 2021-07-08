@@ -84,7 +84,7 @@ Content-Type: application/json
 
 {
 "email": "titi@gmail.com",
-"password": "motdepasse2",
+"password": "titimotdepasse",
 "role":"admin"}
 
 ###
@@ -97,3 +97,19 @@ Content-Type: application/json
 {
   "email":"tata@gmail.com"
   }
+
+
+
+###
+
+DELETE  http://localhost:4000/users/60e5b649e01f560b00fa3db8
+
+
+###
+POST http://localhost:4000/login
+content-type:Application/application/json
+
+{
+"email":"titi@gmail.com",
+"password":"titimotdepasse"
+}
