@@ -12,14 +12,14 @@ GET http://localhost:4000/heroes/69
 ###
 
 
-GET http://localhost:4000/heroes/bio/60e459571f6ee8329c627e71
+GET http://localhost:4000/heroes/bio/60e804156b6fdc45908b254e
 
 ###
 
 DELETE  http://localhost:4000/heroes/bio/60e467d6fb4e3730c8b30074
 
 ###
-GET http://localhost:4000/heroes/60e451e76fbef212f8937d59
+GET http://localhost:4000/heroes
 
 ###
 
@@ -27,8 +27,8 @@ POST http://localhost:4000/heroes
 Content-Type: application/json
 
 {
-"id": "69",
-      "name": "Batman",
+"id": "81",
+      "name": "Thor",
       "powerstats": {
         "intelligence": "81",
         "strength": "40",
@@ -113,3 +113,7 @@ content-type:Application/application/json
 "email":"titi@gmail.com",
 "password":"titimotdepasse"
 }
+
+###
+GET http://localhost:4000/protected
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZTZmNTgwMjQzNWE4MjA5MDg4NjBhNiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYyNTc1MzYzNH0.UoNtmdgZlyXdDpSlrbdjHbYW-NVIF9w56OyezZkIGqY

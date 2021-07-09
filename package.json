@@ -16,6 +16,7 @@
     "fastify": "file:node_modules/fastify",
     "fastify-jwt": "^3.0.0",
     "fastify-mongodb": "^2.0.1",
+    "fastify-plugin": "^3.0.0",
     "http-errors": "^1.8.0"
   },
   "devDependencies": {
